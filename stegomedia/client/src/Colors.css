@@ -134,7 +134,7 @@ h1 span {
   font-size: 1rem;
   font-weight: 600;
   color: var(--white);
-  border-radius: 50px;
+  border-radius: 10px;
   text-align: center;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -191,6 +191,7 @@ h1 span {
   border-radius: 8px;
   /* Optional: Rounded corners */
 }
+
 
 
 

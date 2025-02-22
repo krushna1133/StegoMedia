@@ -54,8 +54,14 @@ const Encrypt = () => {
 
   return (
     <div className="container">
-      <div className="card w-[450px] border border-gray-300 bg-white p-4 rounded-lg shadow-md">
-        <h1 className="text-2xl font-semibold mb-4 text-center">StegoMedia</h1>
+      <div className="card w-[450px] border border-gray-300 bg-white p-10 rounded-lg shadow-md">
+        {/* <h2 className="text-lg font-seibold mb-4 text-center ">StegoMedia</h2> */}
+        <h1 className="text-2xl font-bold mb-4 text-center leading-relaxed tracking-widest font-sans">
+          StegoMedia
+        </h1>
+
+
+        <h2 className=" font-semibold">Encrypt Image</h2>
 
         <div className="flex justify-center gap-6 p-4">
           <button className="btn-dark px-6 py-3 font-semibold rounded" onClick={() => navigate("/Encrypt")}>
@@ -64,18 +70,34 @@ const Encrypt = () => {
           <button className="btn-light px-6 py-3 font-semibold rounded" onClick={() => navigate("/Decrypt")}>
             Decode
           </button>
+          <hr></hr>
         </div>
 
+
         <div className="p-4">
-          <h2 className="text-lg font-semibold mb-2">Image Steganography</h2>
           <input type="file" className="w-full border p-2 rounded text-sm" onChange={(e) => setImage(e.target.files[0])} />
 
-          <label className="block mt-2">Message:</label>
-          <input type="text" className="w-full border p-2 rounded text-sm" placeholder="Enter Message" onChange={(e) => setMessage(e.target.value)} />
+          {/* <label className="block mt-2">Message:</label>
+          <input type="text" className="w-full border p-2 rounded text-sm" placeholder="Enter Message" onChange={(e) => setMessage(e.target.value)} /> */}
+          <div>
+            <h3 className="font-bold mb-2">Message:</h3>
+            <textarea
+              className="w-full border p-3 rounded-md text-base h-32 resize-none"
+              placeholder="Enter Message"
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
 
-          <label className="block mt-2">Password:</label>
-          <input type="password" className="w-full border p-2 rounded text-sm" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} />
 
+            {/* <label className="block mt-2">Message: </label> */}
+            {/* <input type="text" className="w-full border p-2 rounded text-sm" placeholder="Enter Message" onChange={(e) => setMessage(e.target.value)} /> */}
+
+          </div>
+          <div >
+            <h3>Password:</h3>
+            {/* <label className="block mt-2"></label> */}
+            <input type="password" className="w-full border p-4 rounded text-sm" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} />
+
+          </div>
           <button onClick={handleEncrypt} className="button mt-4 w-full" disabled={loading}>
             {loading ? "Encrypting..." : "Encrypt data"}
           </button>
